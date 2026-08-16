@@ -114,7 +114,7 @@ include __DIR__ . '/includes/header.php';
 
   <!-- Clients Section -->
   <section class="clients trusted section-with-sidebar">
-    <div class="container-fluid wrap d-flex flex-column flex-md-row gap-4">
+    <div class="container-fluid wrap d-flex flex-column flex-md-row gap-4 align-items-center">
       <div class="vertical-label-col">
         <span class="vertical-label">TRUSTED BY</span>
       </div>

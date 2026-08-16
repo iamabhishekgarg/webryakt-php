@@ -779,76 +779,88 @@ header.site-header.scrolled {
 .clients, .trusted {
   padding-top: 28px !important;
   padding-bottom: 28px !important;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.clients .vertical-label-col, .trusted .vertical-label-col {
+  align-self: center !important;
+  height: auto !important;
+}
+
+.clients .section-content-col, .trusted .section-content-col {
+  align-self: center !important;
+  min-height: auto !important;
 }
 
 .clients-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  width: 100%;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 24px !important;
+  width: 100% !important;
+  margin: 0 !important;
 }
 
 .client-logo, .brand {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: #1e293b;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  opacity: 0.75;
-  filter: grayscale(100%);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px !important;
+  color: #1e293b !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  opacity: 0.75 !important;
+  filter: grayscale(100%) !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  margin-bottom: 0 !important;
 }
 
 .client-logo:hover, .brand:hover {
-  opacity: 1;
-  filter: grayscale(0%);
-  transform: translateY(-2px);
+  opacity: 1 !important;
+  filter: grayscale(0%) !important;
+  transform: translateY(-2px) !important;
 }
 
 .client-logo.srishti {
-  font-family: serif;
-  font-weight: 400;
-  font-size: 15px;
-  letter-spacing: 2px;
-  text-align: center;
-  line-height: 1;
+  font-family: serif !important;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  letter-spacing: 2px !important;
+  text-align: center !important;
+  line-height: 1 !important;
 }
 
 .client-logo.srishti span {
-  display: block;
-  font-size: 8px;
-  letter-spacing: 3px;
+  display: block !important;
+  font-size: 8px !important;
+  letter-spacing: 3px !important;
 }
 
-.client-logo.cred { font-weight: 900; letter-spacing: 1px; }
-.client-logo.ather { font-weight: 800; letter-spacing: 3px; }
-.client-logo.zepto { font-weight: 800; font-style: italic; letter-spacing: -1px; }
+.client-logo.cred { font-weight: 900 !important; letter-spacing: 1px !important; }
+.client-logo.ather { font-weight: 800 !important; letter-spacing: 3px !important; }
+.client-logo.zepto { font-weight: 800 !important; font-style: italic !important; letter-spacing: -1px !important; }
 .client-logo.indie {
-  font-weight: 800;
-  letter-spacing: 2px;
-  font-size: 14px;
-  line-height: 1;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
 }
 
 .client-logo.indie span {
-  display: block;
-  font-size: 7px;
-  letter-spacing: 3px;
-  font-weight: 600;
+  display: block !important;
+  font-size: 7px !important;
+  letter-spacing: 3px !important;
+  font-weight: 600 !important;
 }
 
 .divider-v {
-  width: 1px;
-  height: 24px;
-  background-color: var(--border-color);
-  flex-shrink: 0;
+  width: 1px !important;
+  height: 24px !important;
+  background-color: var(--border-color) !important;
+  flex-shrink: 0 !important;
 }
 
 /* ============ CTA SECTION ============ */
