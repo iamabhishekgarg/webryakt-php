@@ -35,9 +35,9 @@ include __DIR__ . '/includes/header.php';
 
   <section class="section">
     <div class="container-fluid wrap">
-      <div class="contact-layout row g-4 g-lg-5 align-items-start">
-        <div class="col-12 col-lg-7">
-          <div class="contact-form-wrap">
+      <div class="contact-layout row g-4 g-lg-5 align-items-stretch">
+        <div class="col-12 col-lg-7 d-flex flex-column justify-content-center">
+          <div class="contact-form-wrap w-100">
             <?php if ($formSuccess): ?>
               <div class="form-status visible" style="background:#eefdf4; color:#15803d; border:1px solid #bbf7d0; padding:18px 22px; border-radius:4px; margin-bottom:24px;">
                 <strong>Thank you, <?= htmlspecialchars($name ?? '') ?>!</strong><br>
@@ -52,48 +52,60 @@ include __DIR__ . '/includes/header.php';
             <?php endif; ?>
 
             <form class="contact-form" action="contact.php" method="POST" id="contactForm">
-              <div class="form-row row g-3 mb-3">
-                <div class="field col-12 col-sm-6">
-                  <label for="name">Your Name *</label>
-                  <input type="text" id="name" name="name" required placeholder="John Doe">
+              <div class="row g-3 g-md-4 mb-3 mb-md-4">
+                <div class="col-12 col-sm-6">
+                  <div class="field">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                  </div>
                 </div>
-                <div class="field col-12 col-sm-6">
-                  <label for="email">Email Address *</label>
-                  <input type="email" id="email" name="email" required placeholder="john@company.com">
-                </div>
-              </div>
-
-              <div class="form-row row g-3 mb-3">
-                <div class="field col-12 col-sm-6">
-                  <label for="company">Company / Organization</label>
-                  <input type="text" id="company" name="company" placeholder="Acme Inc.">
-                </div>
-                <div class="field col-12 col-sm-6">
-                  <label for="service">Service Interested In</label>
-                  <select id="service" name="service" class="form-select">
-                    <option value="Web Design">Web Design</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Branding">Branding</option>
-                    <option value="SEO & Analytics">SEO &amp; Analytics</option>
-                    <option value="Full Service Partnership">Full Service Partnership</option>
-                  </select>
+                <div class="col-12 col-sm-6">
+                  <div class="field">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="john@company.com">
+                  </div>
                 </div>
               </div>
 
-              <div class="field mb-3">
-                <label for="message">Project Overview *</label>
-                <textarea id="message" name="message" required placeholder="Tell us about your project goals, scope, and target timeline..."></textarea>
+              <div class="row g-3 g-md-4 mb-3 mb-md-4">
+                <div class="col-12 col-sm-6">
+                  <div class="field">
+                    <label for="company">Company / Organization</label>
+                    <input type="text" id="company" name="company" placeholder="Acme Inc.">
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="field">
+                    <label for="service">Service Interested In</label>
+                    <select id="service" name="service" class="form-select custom-select-field">
+                      <option value="Web Design">Web Design</option>
+                      <option value="Digital Marketing">Digital Marketing</option>
+                      <option value="Branding">Branding</option>
+                      <option value="SEO & Analytics">SEO &amp; Analytics</option>
+                      <option value="Full Service Partnership">Full Service Partnership</option>
+                    </select>
+                  </div>
+                </div>
               </div>
 
-              <button type="submit" class="btn" style="align-self:start; margin-top:8px;">
-                Send Message <span class="arrow">&#8594;</span>
+              <div class="row mb-4">
+                <div class="col-12">
+                  <div class="field">
+                    <label for="message">Project Overview *</label>
+                    <textarea id="message" name="message" required placeholder="Tell us about your project goals, scope, and target timeline..."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-submit" style="align-self:start;">
+                SEND MESSAGE <span class="arrow ms-2">&#8594;</span>
               </button>
             </form>
           </div>
         </div>
 
-        <div class="col-12 col-lg-5">
-          <div class="contact-info">
+        <div class="col-12 col-lg-5 d-flex flex-column">
+          <div class="contact-info h-100 d-flex flex-column justify-content-center">
             <h3>Direct Contact</h3>
             <p>Prefer to reach out directly? Connect with our team via email or call our studio.</p>
 

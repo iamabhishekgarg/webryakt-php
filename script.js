@@ -36,33 +36,71 @@ if (navToggle && mainNav) {
   svg.innerHTML = markup;
 })();
 
-// ============ Reveal on scroll ============
-const revealTargets = document.querySelectorAll('.service-card, .work-card, .portfolio-item, .insight-card, .value-card, .service-detail');
+// ============ Smooth Scroll Reveal with Micro-Stagger ============
+const revealTargets = document.querySelectorAll('.service-card, .work-card, .portfolio-item, .insight-card, .value-card, .service-detail, .process-step, .stat');
 
 if ('IntersectionObserver' in window && revealTargets.length) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.transition = 'opacity .6s ease, transform .6s ease';
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+        entry.target.classList.add('is-revealed');
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
 
-  revealTargets.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(16px)';
+  revealTargets.forEach((el, index) => {
+    el.classList.add('reveal-item');
+    el.style.transitionDelay = `${(index % 4) * 0.1}s`;
     io.observe(el);
   });
 }
 
-// ============ Sticky header shadow on scroll ============
+// ============ Animated Stat Number Counter ============
+const statElements = document.querySelectorAll('.stat strong');
+if ('IntersectionObserver' in window && statElements.length) {
+  const statIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const text = el.innerText.trim();
+        const match = text.match(/(\d+)(.*)/);
+        if (match) {
+          const targetNum = parseInt(match[1], 10);
+          const suffix = match[2] || '';
+          let current = 0;
+          const duration = 1500;
+          const stepTime = 30;
+          const steps = duration / stepTime;
+          const increment = targetNum / steps;
+
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= targetNum) {
+              el.innerText = targetNum + suffix;
+              clearInterval(timer);
+            } else {
+              el.innerText = Math.floor(current) + suffix;
+            }
+          }, stepTime);
+        }
+        statIO.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statElements.forEach(el => statIO.observe(el));
+}
+
+// ============ Sticky header shadow & glass effect on scroll ============
 const header = document.querySelector('header, .site-header');
 if (header) {
   window.addEventListener('scroll', () => {
-    header.style.boxShadow = window.scrollY > 8 ? '0 1px 0 rgba(18,21,28,.06)' : 'none';
+    if (window.scrollY > 12) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
   }, { passive: true });
 }
 
@@ -83,7 +121,13 @@ if (filterRow && portfolioGrid) {
     const filter = btn.dataset.filter;
     cards.forEach(card => {
       const match = filter === 'all' || card.dataset.category === filter;
-      card.classList.toggle('hidden', !match);
+      if (match) {
+        card.classList.remove('hidden');
+        card.style.opacity = '1';
+        card.style.transform = 'scale(1)';
+      } else {
+        card.classList.add('hidden');
+      }
     });
   });
 }
