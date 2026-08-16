@@ -11,8 +11,8 @@ include __DIR__ . '/includes/header.php';
   <!-- Hero Section -->
   <section class="hero">
     <div class="container-fluid wrap">
-      <div class="hero-grid row align-items-start g-4 g-lg-5">
-        <div class="col-12 col-lg-7">
+      <div class="hero-grid">
+        <div class="hero-left">
           <span class="hero-left-label eyebrow">DESIGN &amp; MARKETING AGENCY</span>
           <h1 class="hero-title">We craft digital experiences that grow <span>ambitious brands</span>.</h1>
           <p class="hero-description">From first sketch to shipped product, we cover the full stack of building and growing a digital brand — design, marketing, identity and measurement.</p>
@@ -22,7 +22,7 @@ include __DIR__ . '/includes/header.php';
           </a>
         </div>
 
-        <div class="col-12 col-lg-5 hero-right">
+        <div class="hero-right">
           <div class="coords">22.7196° N,<br>75.8577° E</div>
           <div class="hero-img-wrapper">
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Modern Interior Space">

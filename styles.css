@@ -87,14 +87,9 @@ button {
   max-width: 100% !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  padding-left: clamp(16px, 4vw, 64px) !important;
-  padding-right: clamp(16px, 4vw, 64px) !important;
+  padding-left: clamp(24px, 4vw, 72px) !important;
+  padding-right: clamp(24px, 4vw, 72px) !important;
   box-sizing: border-box !important;
-}
-
-.row {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
 }
 
 .dot, .accent-dot {
@@ -253,10 +248,22 @@ header.site-header.scrolled {
 /* ============ HERO SECTION (HOME) ============ */
 .hero {
   position: relative;
-  padding-top: 40px;
+  padding-top: 44px;
   padding-bottom: 64px;
   width: 100%;
   overflow-x: hidden;
+}
+
+.hero-grid {
+  display: grid !important;
+  grid-template-columns: 1.1fr 0.9fr !important;
+  gap: clamp(32px, 4vw, 64px) !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+.hero-left {
+  width: 100% !important;
 }
 
 .hero-left-label, .eyebrow {
@@ -270,13 +277,13 @@ header.site-header.scrolled {
 }
 
 .hero h1, .hero-title {
-  font-size: clamp(32px, 4.8vw, 64px);
+  font-size: clamp(34px, 4.5vw, 60px);
   line-height: 1.08;
   font-weight: 800;
   letter-spacing: -1.5px;
   margin-bottom: 24px;
   color: #0b132a;
-  max-width: 760px;
+  max-width: 720px;
 }
 
 .hero h1 span, .hero-title span {
@@ -286,7 +293,7 @@ header.site-header.scrolled {
 .hero-description, .hero-desc {
   font-size: 15.5px;
   color: var(--text-gray);
-  max-width: 560px;
+  max-width: 520px;
   line-height: 1.65;
   margin-bottom: 32px;
 }
@@ -322,8 +329,11 @@ header.site-header.scrolled {
 }
 
 .hero-right {
-  position: relative;
-  width: 100%;
+  position: relative !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
 }
 
 .coords {
@@ -340,6 +350,7 @@ header.site-header.scrolled {
 .hero-img-wrapper {
   position: relative;
   width: 100%;
+  max-width: 480px;
   border-radius: 6px;
   background: #eef2f5;
   overflow: hidden;
@@ -354,7 +365,7 @@ header.site-header.scrolled {
 
 .hero-img-wrapper img {
   width: 100%;
-  height: 460px;
+  height: 480px;
   object-fit: cover;
   display: block;
   transition: transform 0.6s ease;
@@ -366,9 +377,9 @@ header.site-header.scrolled {
 
 .hero-overlay-card, .hero-card {
   position: absolute;
-  left: 24px;
-  bottom: 30px;
-  width: 240px;
+  left: -40px;
+  bottom: 36px;
+  width: 230px;
   background-color: var(--card-blue);
   color: #fff;
   padding: 28px 24px;
@@ -1050,7 +1061,7 @@ header.site-header.scrolled {
 
 .stat {
   background: #fff;
-  padding: 36px 28px;
+  padding: 40px 32px;
   height: 100%;
   transition: var(--transition-smooth);
 }
@@ -1183,14 +1194,14 @@ header.site-header.scrolled {
 }
 
 .insight-card h3 {
-  font-size: 17px;
+  font-size: 17.5px;
   font-weight: 700;
   line-height: 1.4;
   margin-bottom: 10px;
 }
 
 .insight-card p {
-  font-size: 13.5px;
+  font-size: 14px;
   color: var(--text-gray);
   line-height: 1.6;
 }
@@ -1198,7 +1209,7 @@ header.site-header.scrolled {
 /* ============ CONTACT PAGE & FORM STYLING ============ */
 .contact-form-wrap {
   background: #ffffff !important;
-  padding: 36px 30px !important;
+  padding: 40px 36px !important;
   border: 1px solid var(--border-color) !important;
   border-radius: 6px !important;
   box-shadow: var(--shadow-sm) !important;
@@ -1230,7 +1241,7 @@ select.custom-select-field {
   display: block !important;
   border: 1px solid var(--border-color) !important;
   border-radius: 4px !important;
-  padding: 13px 16px !important;
+  padding: 14px 16px !important;
   font-family: inherit !important;
   font-size: 14px !important;
   color: var(--text-dark) !important;
@@ -1250,7 +1261,7 @@ select.custom-select-field:focus {
 
 .field textarea {
   resize: vertical !important;
-  min-height: 130px !important;
+  min-height: 140px !important;
 }
 
 .btn-submit {
@@ -1258,7 +1269,7 @@ select.custom-select-field:focus {
   align-items: center !important;
   justify-content: center !important;
   gap: 10px !important;
-  padding: 15px 32px !important;
+  padding: 16px 36px !important;
   background: var(--accent-blue) !important;
   color: #ffffff !important;
   font-size: 12px !important;
@@ -1282,7 +1293,7 @@ select.custom-select-field:focus {
 .contact-info {
   background: var(--cta-bg);
   color: #fff;
-  padding: 40px 32px;
+  padding: 44px 36px;
   border-radius: 6px;
   box-shadow: var(--shadow-md);
   width: 100%;
@@ -1438,8 +1449,17 @@ footer {
   color: var(--text-dark);
 }
 
-/* ============ FULLY RESPONSIVE MOBILE BREAKPOINTS (< 992px) ============ */
+/* ============ FULLY RESPONSIVE BREAKPOINTS ============ */
 @media (max-width: 991px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .hero-right {
+    align-items: flex-start !important;
+  }
+
   .wrap, 
   .container-fluid.wrap, 
   .container, 
@@ -1499,7 +1519,7 @@ footer {
   }
 
   .hero-img-wrapper img {
-    height: 320px !important;
+    height: 340px !important;
   }
 
   .hero-overlay-card, .hero-card {
