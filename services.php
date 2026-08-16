@@ -20,7 +20,7 @@ include __DIR__ . '/includes/header.php';
     <div class="container-fluid wrap">
       <div class="service-detail-list">
         <?php foreach ($services as $service): ?>
-          <div class="service-detail row g-3 g-md-4 py-4" id="<?= htmlspecialchars($service['slug'] ?? '') ?>">
+          <div class="service-detail row g-3 g-md-4 py-4 align-items-start" id="<?= htmlspecialchars($service['slug'] ?? '') ?>">
             <div class="col-12 col-sm-2 col-md-1">
               <span class="idx"><?= htmlspecialchars($service['id'] ?? '') ?></span>
             </div>
@@ -43,15 +43,15 @@ include __DIR__ . '/includes/header.php';
 
   <section class="section pt-0">
     <div class="container-fluid wrap">
-      <div class="section-head row g-3 g-lg-4 mb-5 align-items-end">
-        <div class="col-12 col-md-3 col-lg-2">
-          <span class="rail-label">How we work</span>
-        </div>
-        <div class="col-12 col-md-5 col-lg-5">
-          <h2>A process built for <em>clarity</em>, not guesswork.</h2>
-        </div>
-        <div class="col-12 col-md-4 col-lg-5">
-          <p>Every engagement follows the same disciplined path — so you always know what's next and why.</p>
+      <div class="section-head mb-5">
+        <span class="rail-label mb-3">How we work</span>
+        <div class="row g-4 align-items-end">
+          <div class="col-12 col-lg-7">
+            <h2>A process built for <em>clarity</em>, not guesswork.</h2>
+          </div>
+          <div class="col-12 col-lg-5">
+            <p>Every engagement follows the same disciplined path — so you always know what's next and why.</p>
+          </div>
         </div>
       </div>
 

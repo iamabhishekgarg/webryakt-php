@@ -53,15 +53,15 @@ include __DIR__ . '/includes/header.php';
 
   <section class="section">
     <div class="container-fluid wrap">
-      <div class="section-head row g-3 g-lg-4 mb-5 align-items-end">
-        <div class="col-12 col-md-3 col-lg-2">
-          <span class="rail-label">Our values</span>
-        </div>
-        <div class="col-12 col-md-5 col-lg-5">
-          <h2>What guides <em>every</em> project we take on.</h2>
-        </div>
-        <div class="col-12 col-md-4 col-lg-5">
-          <p>Principles we hold ourselves to, on every brief, for every client, every time.</p>
+      <div class="section-head mb-5">
+        <span class="rail-label mb-3">Our values</span>
+        <div class="row g-4 align-items-end">
+          <div class="col-12 col-lg-7">
+            <h2>What guides <em>every</em> project we take on.</h2>
+          </div>
+          <div class="col-12 col-lg-5">
+            <p>Principles we hold ourselves to, on every brief, for every client, every time.</p>
+          </div>
         </div>
       </div>
 

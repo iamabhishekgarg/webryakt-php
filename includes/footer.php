@@ -68,7 +68,7 @@ if (!isset($siteConfig)) {
 <!-- Bootstrap 5.3 JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Custom JS -->
-<script src="script.js"></script>
+<!-- Custom JS with Cache Buster -->
+<script src="script.js?v=<?= time() ?>"></script>
 </body>
 </html>

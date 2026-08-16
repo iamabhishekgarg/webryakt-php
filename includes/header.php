@@ -21,8 +21,8 @@ $currentPage = $currentPage ?? 'home';
 <!-- Bootstrap 5.3 CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
-<!-- Custom Stylesheet -->
-<link rel="stylesheet" href="styles.css">
+<!-- Custom Stylesheet with Cache Buster -->
+<link rel="stylesheet" href="styles.css?v=<?= time() ?>">
 </head>
 <body>
 
