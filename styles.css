@@ -78,18 +78,23 @@ button {
   transform: translateY(0);
 }
 
-/* ============ 100% FLUID MASTER CONTAINER ARCHITECTURE ============ */
+/* ============ MASTER CONTAINER ARCHITECTURE ============ */
 .wrap, 
 .container-fluid.wrap, 
 .container, 
 .container-fluid {
   width: 100% !important;
-  max-width: 100% !important;
+  max-width: 1440px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: clamp(20px, 4vw, 56px) !important;
+  padding-right: clamp(20px, 4vw, 56px) !important;
+  box-sizing: border-box !important;
+}
+
+.row {
   margin-left: 0 !important;
   margin-right: 0 !important;
-  padding-left: clamp(24px, 4vw, 72px) !important;
-  padding-right: clamp(24px, 4vw, 72px) !important;
-  box-sizing: border-box !important;
 }
 
 .dot, .accent-dot {
@@ -257,7 +262,7 @@ header.site-header.scrolled {
 .hero-grid {
   display: grid !important;
   grid-template-columns: 1.1fr 0.9fr !important;
-  gap: clamp(32px, 4vw, 64px) !important;
+  gap: clamp(32px, 4vw, 56px) !important;
   align-items: start !important;
   width: 100% !important;
 }
@@ -350,12 +355,13 @@ header.site-header.scrolled {
 .hero-img-wrapper {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 540px;
   border-radius: 6px;
   background: #eef2f5;
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: var(--transition-smooth);
+  margin-left: auto;
 }
 
 .hero-img-wrapper:hover {
@@ -377,9 +383,10 @@ header.site-header.scrolled {
 
 .hero-overlay-card, .hero-card {
   position: absolute;
-  left: -40px;
-  bottom: 36px;
-  width: 230px;
+  left: 24px;
+  bottom: 24px;
+  width: 250px;
+  max-width: calc(100% - 48px);
   background-color: var(--card-blue);
   color: #fff;
   padding: 28px 24px;
