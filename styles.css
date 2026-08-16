@@ -1452,23 +1452,58 @@ footer {
   color: var(--text-dark);
 }
 
-/* ============ FULLY RESPONSIVE BREAKPOINTS ============ */
+/* ============ MEDIA QUERIES AT VERY BOTTOM FOR HIGHEST SPECIFICITY OVERRIDES ============ */
 @media (max-width: 991px) {
   .hero-grid {
     grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    gap: 24px !important;
   }
 
   .hero-right {
     align-items: flex-start !important;
   }
 
+  .coords {
+    text-align: left !important;
+    border-right: none !important;
+    border-left: 2px solid var(--text-dark) !important;
+    padding-left: 12px !important;
+    padding-right: 0 !important;
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-img-wrapper {
+    max-width: 100% !important;
+    overflow: visible !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-img-wrapper img {
+    height: 320px !important;
+    border-radius: 6px !important;
+  }
+
+  .hero-overlay-card, .hero-card {
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: calc(100% - 32px) !important;
+    max-width: 100% !important;
+    margin: -36px auto 0 auto !important;
+    box-sizing: border-box !important;
+    padding: 24px 20px !important;
+    z-index: 10 !important;
+    box-shadow: 0 12px 30px rgba(29, 64, 176, 0.25) !important;
+  }
+
   .wrap, 
   .container-fluid.wrap, 
   .container, 
   .container-fluid {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
   /* Section with Sidebar Mobile Stack */
@@ -1509,29 +1544,12 @@ footer {
   /* Hero Section Mobile */
   .hero {
     padding-top: 24px !important;
-    padding-bottom: 48px !important;
+    padding-bottom: 40px !important;
   }
 
   .hero h1, .hero-title {
-    font-size: 34px !important;
+    font-size: 32px !important;
     line-height: 1.15 !important;
-  }
-
-  .hero-img-wrapper {
-    max-width: 100% !important;
-  }
-
-  .hero-img-wrapper img {
-    height: 340px !important;
-  }
-
-  .hero-overlay-card, .hero-card {
-    position: relative !important;
-    left: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    margin-top: -30px !important;
-    box-sizing: border-box !important;
   }
 
   /* Clients Banner Mobile */
