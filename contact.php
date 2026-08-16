@@ -40,14 +40,14 @@ include __DIR__ . '/includes/header.php';
           <div class="contact-form-wrap">
             <?php if ($formSuccess): ?>
               <div class="form-status visible" style="background:#eefdf4; color:#15803d; border:1px solid #bbf7d0; padding:18px 22px; border-radius:4px; margin-bottom:24px;">
-                <strong>Thank you, <?= htmlspecialchars($name) ?>!</strong><br>
-                Your message has been received. Our team will get back to you shortly at <?= htmlspecialchars($email) ?>.
+                <strong>Thank you, <?= htmlspecialchars($name ?? '') ?>!</strong><br>
+                Your message has been received. Our team will get back to you shortly at <?= htmlspecialchars($email ?? '') ?>.
               </div>
             <?php endif; ?>
 
             <?php if ($errorMessage): ?>
               <div class="form-status visible" style="background:#fef2f2; color:#b91c1c; border:1px solid #fecaca; padding:18px 22px; border-radius:4px; margin-bottom:24px;">
-                <?= htmlspecialchars($errorMessage) ?>
+                <?= htmlspecialchars($errorMessage ?? '') ?>
               </div>
             <?php endif; ?>
 
@@ -101,7 +101,7 @@ include __DIR__ . '/includes/header.php';
               <div class="ico">&#9993;</div>
               <div>
                 <h4>Email Us</h4>
-                <a href="mailto:<?= htmlspecialchars($siteConfig['email']) ?>"><?= htmlspecialchars($siteConfig['email']) ?></a>
+                <a href="mailto:<?= htmlspecialchars($siteConfig['email'] ?? '') ?>"><?= htmlspecialchars($siteConfig['email'] ?? '') ?></a>
               </div>
             </div>
 
@@ -109,7 +109,7 @@ include __DIR__ . '/includes/header.php';
               <div class="ico">&#9742;</div>
               <div>
                 <h4>Call Us</h4>
-                <a href="tel:<?= preg_replace('/[^0-9+]/', '', $siteConfig['phone']) ?>"><?= htmlspecialchars($siteConfig['phone']) ?></a>
+                <a href="tel:<?= preg_replace('/[^0-9+]/', '', $siteConfig['phone'] ?? '') ?>"><?= htmlspecialchars($siteConfig['phone'] ?? '') ?></a>
               </div>
             </div>
 
@@ -117,7 +117,7 @@ include __DIR__ . '/includes/header.php';
               <div class="ico">&#8982;</div>
               <div>
                 <h4>Location</h4>
-                <p><?= htmlspecialchars($siteConfig['location']) ?></p>
+                <p><?= htmlspecialchars($siteConfig['location'] ?? '') ?></p>
               </div>
             </div>
           </div>

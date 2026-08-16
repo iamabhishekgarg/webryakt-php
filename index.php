@@ -59,13 +59,13 @@ include __DIR__ . '/includes/header.php';
                 <div class="col">
                   <div class="service-card">
                     <div class="service-icon">
-                      <?= $service['icon'] ?>
+                      <?= $service['icon'] ?? '' ?>
                     </div>
                     <div>
-                      <h3><?= htmlspecialchars($service['title']) ?></h3>
-                      <p><?= htmlspecialchars($service['short_desc']) ?></p>
+                      <h3><?= htmlspecialchars($service['title'] ?? '') ?></h3>
+                      <p><?= htmlspecialchars($service['short_desc'] ?? $service['desc'] ?? $service['overview'] ?? '') ?></p>
                     </div>
-                    <a href="services.php#<?= $service['slug'] ?>" class="service-link">
+                    <a href="services.php#<?= htmlspecialchars($service['slug'] ?? '') ?>" class="service-link">
                       EXPLORE
                       <svg viewBox="0 0 14 10"><path d="M0 5h12M8 1l4 4-4 4"/></svg>
                     </a>
@@ -90,11 +90,11 @@ include __DIR__ . '/includes/header.php';
         <div class="portfolio-grid row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-3">
           <?php foreach ($projects as $project): ?>
             <div class="col">
-              <a class="work-card" data-category="<?= htmlspecialchars($project['category_slug']) ?>" href="work.php">
-                <img src="<?= htmlspecialchars($project['image']) ?>" alt="<?= htmlspecialchars($project['alt']) ?>">
-                <div class="work-card-overlay <?= htmlspecialchars($project['overlay']) ?>">
-                  <span class="work-tag"><?= htmlspecialchars(strtoupper($project['category'])) ?></span>
-                  <h3><?= htmlspecialchars($project['title']) ?></h3>
+              <a class="work-card" data-category="<?= htmlspecialchars($project['category_slug'] ?? '') ?>" href="work.php">
+                <img src="<?= htmlspecialchars($project['image'] ?? '') ?>" alt="<?= htmlspecialchars($project['alt'] ?? '') ?>">
+                <div class="work-card-overlay <?= htmlspecialchars($project['overlay'] ?? '') ?>">
+                  <span class="work-tag"><?= htmlspecialchars(strtoupper($project['category'] ?? '')) ?></span>
+                  <h3><?= htmlspecialchars($project['title'] ?? '') ?></h3>
                   <span class="arrow-circle">&#8594;</span>
                 </div>
               </a>
@@ -122,11 +122,11 @@ include __DIR__ . '/includes/header.php';
       <div class="section-content-col w-100">
         <div class="clients-grid d-flex flex-wrap justify-content-between align-items-center gap-3">
           <?php foreach ($clientLogos as $idx => $client): ?>
-            <div class="client-logo <?= htmlspecialchars($client['class']) ?>">
+            <div class="client-logo <?= htmlspecialchars($client['class'] ?? '') ?>">
               <?php if (!empty($client['subtext'])): ?>
-                <?= htmlspecialchars($client['name']) ?> <span><?= htmlspecialchars($client['subtext']) ?></span>
+                <?= htmlspecialchars($client['name'] ?? '') ?> <span><?= htmlspecialchars($client['subtext'] ?? '') ?></span>
               <?php else: ?>
-                <?= htmlspecialchars($client['name']) ?>
+                <?= htmlspecialchars($client['name'] ?? '') ?>
               <?php endif; ?>
             </div>
             <?php if ($idx < count($clientLogos) - 1): ?>

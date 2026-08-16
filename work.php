@@ -28,12 +28,12 @@ include __DIR__ . '/includes/header.php';
 
       <div class="portfolio-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3" id="portfolioGrid">
         <?php foreach ($projects as $project): ?>
-          <div class="col work-card-wrapper" data-category="<?= htmlspecialchars($project['category_slug']) ?>">
+          <div class="col work-card-wrapper" data-category="<?= htmlspecialchars($project['category_slug'] ?? '') ?>">
             <a class="work-card w-100" href="#">
-              <img src="<?= htmlspecialchars($project['image']) ?>" alt="<?= htmlspecialchars($project['alt']) ?>">
-              <div class="work-card-overlay <?= htmlspecialchars($project['overlay']) ?>">
-                <span class="work-tag"><?= htmlspecialchars(strtoupper($project['category'])) ?></span>
-                <h3><?= htmlspecialchars($project['title']) ?></h3>
+              <img src="<?= htmlspecialchars($project['image'] ?? '') ?>" alt="<?= htmlspecialchars($project['alt'] ?? '') ?>">
+              <div class="work-card-overlay <?= htmlspecialchars($project['overlay'] ?? '') ?>">
+                <span class="work-tag"><?= htmlspecialchars(strtoupper($project['category'] ?? '')) ?></span>
+                <h3><?= htmlspecialchars($project['title'] ?? '') ?></h3>
                 <span class="arrow-circle">&#8594;</span>
               </div>
             </a>

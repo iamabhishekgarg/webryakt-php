@@ -20,18 +20,18 @@ include __DIR__ . '/includes/header.php';
     <div class="container-fluid wrap">
       <div class="service-detail-list">
         <?php foreach ($services as $service): ?>
-          <div class="service-detail row g-3 g-md-4 py-4" id="<?= htmlspecialchars($service['slug']) ?>">
+          <div class="service-detail row g-3 g-md-4 py-4" id="<?= htmlspecialchars($service['slug'] ?? '') ?>">
             <div class="col-12 col-sm-2 col-md-1">
-              <span class="idx"><?= htmlspecialchars($service['id']) ?></span>
+              <span class="idx"><?= htmlspecialchars($service['id'] ?? '') ?></span>
             </div>
             <div class="col-12 col-sm-10 col-md-4 col-lg-3">
-              <h3><?= htmlspecialchars($service['title']) ?></h3>
+              <h3><?= htmlspecialchars($service['title'] ?? '') ?></h3>
             </div>
             <div class="col-12 col-md-7 col-lg-8">
-              <p><?= htmlspecialchars($service['overview']) ?></p>
+              <p><?= htmlspecialchars($service['overview'] ?? $service['desc'] ?? '') ?></p>
               <div class="tag-list d-flex flex-wrap gap-2 mt-3">
-                <?php foreach ($service['tags'] as $tag): ?>
-                  <span><?= htmlspecialchars($tag) ?></span>
+                <?php foreach (($service['tags'] ?? []) as $tag): ?>
+                  <span><?= htmlspecialchars($tag ?? '') ?></span>
                 <?php endforeach; ?>
               </div>
             </div>
@@ -59,9 +59,9 @@ include __DIR__ . '/includes/header.php';
         <?php foreach ($processSteps as $step): ?>
           <div class="col">
             <div class="process-step">
-              <span class="num"><?= htmlspecialchars($step['id']) ?> — <?= htmlspecialchars($step['phase']) ?></span>
-              <h4><?= htmlspecialchars($step['title']) ?></h4>
-              <p><?= htmlspecialchars($step['desc']) ?></p>
+              <span class="num"><?= htmlspecialchars($step['id'] ?? '') ?> — <?= htmlspecialchars($step['phase'] ?? '') ?></span>
+              <h4><?= htmlspecialchars($step['title'] ?? '') ?></h4>
+              <p><?= htmlspecialchars($step['desc'] ?? '') ?></p>
             </div>
           </div>
         <?php endforeach; ?>

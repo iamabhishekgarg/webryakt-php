@@ -35,6 +35,7 @@ $services = [
         'slug' => 'web-design',
         'title' => 'Web Design',
         'desc' => 'Beautiful, fast and responsive websites that convert visitors into customers.',
+        'short_desc' => 'Beautiful, fast and responsive websites that convert visitors into customers.',
         'overview' => 'We design and build fast, responsive websites that turn visitors into customers — grounded in your brand, written for your audience, and engineered to convert.',
         'icon' => '<svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M7 8h10M7 12h5"/></svg>',
         'tags' => ['UX & UI Design', 'Webflow & Custom Build', 'Design Systems', 'Conversion Optimization']
@@ -44,6 +45,7 @@ $services = [
         'slug' => 'digital-marketing',
         'title' => 'Digital Marketing',
         'desc' => 'Data-driven strategies that increase visibility, generate leads and drive growth.',
+        'short_desc' => 'Data-driven strategies that increase visibility, generate leads and drive growth.',
         'overview' => 'Data-driven strategy across paid, search and social — built to increase visibility, generate qualified leads and compound growth month over month.',
         'icon' => '<svg viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>',
         'tags' => ['Paid Media', 'Content Strategy', 'Email & CRM', 'Marketing Automation']
@@ -53,6 +55,7 @@ $services = [
         'slug' => 'branding',
         'title' => 'Branding',
         'desc' => 'Strong brands that connect with people and stand out in the right way.',
+        'short_desc' => 'Strong brands that connect with people and stand out in the right way.',
         'overview' => 'Strong, considered brand identities that connect with the right people and stand out for the right reasons — from naming to visual systems.',
         'icon' => '<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
         'tags' => ['Brand Strategy', 'Identity Design', 'Naming', 'Brand Guidelines']
@@ -62,6 +65,7 @@ $services = [
         'slug' => 'seo-analytics',
         'title' => 'SEO & Analytics',
         'desc' => 'Improve rankings, track performance and maximize your online presence.',
+        'short_desc' => 'Improve rankings, track performance and maximize your online presence.',
         'overview' => 'Technical and content SEO paired with clear reporting, so you always know what\'s working, what isn\'t, and what to fix next.',
         'icon' => '<svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>',
         'tags' => ['Technical SEO', 'Content SEO', 'Analytics Setup', 'Performance Reporting']
@@ -126,13 +130,15 @@ $projects = [
 ];
 
 $brands = [
-    ['name' => 'zomato', 'class' => 'client-logo', 'html' => 'zomato'],
-    ['name' => 'SRISHTI GROUP', 'class' => 'client-logo srishti', 'html' => 'SRISHTI<span>GROUP</span>'],
-    ['name' => 'CRED', 'class' => 'client-logo cred', 'html' => 'CRED'],
-    ['name' => 'ATHER', 'class' => 'client-logo ather', 'html' => 'ATHER'],
-    ['name' => 'zepto', 'class' => 'client-logo zepto', 'html' => 'zepto'],
-    ['name' => 'INDIE HOTELS', 'class' => 'client-logo indie', 'html' => 'INDIE<span>HOTELS</span>']
+    ['name' => 'zomato', 'class' => 'client-logo', 'html' => 'zomato', 'subtext' => ''],
+    ['name' => 'SRISHTI GROUP', 'class' => 'client-logo srishti', 'html' => 'SRISHTI<span>GROUP</span>', 'subtext' => 'GROUP'],
+    ['name' => 'CRED', 'class' => 'client-logo cred', 'html' => 'CRED', 'subtext' => ''],
+    ['name' => 'ATHER', 'class' => 'client-logo ather', 'html' => 'ATHER', 'subtext' => ''],
+    ['name' => 'zepto', 'class' => 'client-logo zepto', 'html' => 'zepto', 'subtext' => ''],
+    ['name' => 'INDIE HOTELS', 'class' => 'client-logo indie', 'html' => 'INDIE<span>HOTELS</span>', 'subtext' => 'HOTELS']
 ];
+
+$clientLogos = $brands;
 
 $stats = [
     ['number' => '60+', 'label' => 'Projects shipped'],

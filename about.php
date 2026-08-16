@@ -42,8 +42,8 @@ include __DIR__ . '/includes/header.php';
         <?php foreach ($stats as $stat): ?>
           <div class="col">
             <div class="stat">
-              <strong><?= htmlspecialchars($stat['number']) ?></strong>
-              <span><?= htmlspecialchars($stat['label']) ?></span>
+              <strong><?= htmlspecialchars($stat['number'] ?? '') ?></strong>
+              <span><?= htmlspecialchars($stat['label'] ?? '') ?></span>
             </div>
           </div>
         <?php endforeach; ?>
@@ -69,9 +69,9 @@ include __DIR__ . '/includes/header.php';
         <?php foreach ($values as $val): ?>
           <div class="col">
             <div class="value-card">
-              <span class="num"><?= htmlspecialchars($val['id']) ?></span>
-              <h3><?= htmlspecialchars($val['title']) ?></h3>
-              <p><?= htmlspecialchars($val['desc']) ?></p>
+              <span class="num"><?= htmlspecialchars($val['id'] ?? '') ?></span>
+              <h3><?= htmlspecialchars($val['title'] ?? '') ?></h3>
+              <p><?= htmlspecialchars($val['desc'] ?? '') ?></p>
             </div>
           </div>
         <?php endforeach; ?>

@@ -25,17 +25,17 @@ $regularPosts = array_slice($insights, 1);
         <div class="insights-feature row g-4 g-lg-5 align-items-start mb-5 pb-5 border-bottom">
           <div class="col-12 col-lg-7">
             <div class="insight-photo">
-              <img src="<?= htmlspecialchars($featuredPost['photo']) ?>" alt="<?= htmlspecialchars($featuredPost['title']) ?>">
+              <img src="<?= htmlspecialchars($featuredPost['photo'] ?? '') ?>" alt="<?= htmlspecialchars($featuredPost['title'] ?? '') ?>">
             </div>
           </div>
           <div class="col-12 col-lg-5">
             <div class="insight-copy">
               <div class="insight-meta mb-2">
-                <span><?= htmlspecialchars($featuredPost['category']) ?></span>
-                <span class="date">&bull; <?= htmlspecialchars($featuredPost['date']) ?></span>
+                <span><?= htmlspecialchars($featuredPost['category'] ?? '') ?></span>
+                <span class="date">&bull; <?= htmlspecialchars($featuredPost['date'] ?? '') ?></span>
               </div>
-              <h2><?= htmlspecialchars($featuredPost['title']) ?></h2>
-              <p><?= htmlspecialchars($featuredPost['excerpt']) ?></p>
+              <h2><?= htmlspecialchars($featuredPost['title'] ?? '') ?></h2>
+              <p><?= htmlspecialchars($featuredPost['excerpt'] ?? '') ?></p>
               <a href="#" class="text-link mt-3 d-inline-flex">READ ARTICLE <span class="arrow ms-2">&#8594;</span></a>
             </div>
           </div>
@@ -47,14 +47,14 @@ $regularPosts = array_slice($insights, 1);
           <div class="col">
             <article class="insight-card">
               <div class="insight-photo">
-                <img src="<?= htmlspecialchars($post['photo']) ?>" alt="<?= htmlspecialchars($post['title']) ?>">
+                <img src="<?= htmlspecialchars($post['photo'] ?? '') ?>" alt="<?= htmlspecialchars($post['title'] ?? '') ?>">
               </div>
               <div class="insight-meta">
-                <span><?= htmlspecialchars($post['category']) ?></span>
-                <span class="date">&bull; <?= htmlspecialchars($post['date']) ?></span>
+                <span><?= htmlspecialchars($post['category'] ?? '') ?></span>
+                <span class="date">&bull; <?= htmlspecialchars($post['date'] ?? '') ?></span>
               </div>
-              <h3><?= htmlspecialchars($post['title']) ?></h3>
-              <p><?= htmlspecialchars($post['excerpt']) ?></p>
+              <h3><?= htmlspecialchars($post['title'] ?? '') ?></h3>
+              <p><?= htmlspecialchars($post['excerpt'] ?? '') ?></p>
             </article>
           </div>
         <?php endforeach; ?>
