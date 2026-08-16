@@ -1,9 +1,9 @@
 <!-- CTA Section -->
 <section class="cta-section">
-  <div class="container">
+  <div class="container-fluid wrap">
     <div class="cta-card">
       <div class="cta-image">
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="Interior Design Chair">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80" alt="Interior Design Chair">
       </div>
       <div class="cta-content">
         <span class="cta-subtitle">LET'S BUILD SOMETHING</span>

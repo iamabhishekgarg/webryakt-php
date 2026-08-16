@@ -3,19 +3,13 @@ const navToggle = document.getElementById('hamburger') || document.getElementByI
 const mainNav = document.getElementById('navLinks') || document.getElementById('mainNav');
 
 if (navToggle && mainNav) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = mainNav.classList.toggle('active');
-    mainNav.classList.toggle('open', isOpen);
-    navToggle.classList.toggle('is-open', isOpen);
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-  });
-
   mainNav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      mainNav.classList.remove('active');
-      mainNav.classList.remove('open');
-      navToggle.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', 'false');
+      const navbarCollapse = document.getElementById('navbarContent');
+      if (navbarCollapse && window.bootstrap) {
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (bsCollapse) bsCollapse.hide();
+      }
     });
   });
 }
@@ -77,7 +71,7 @@ const filterRow = document.getElementById('filterRow');
 const portfolioGrid = document.getElementById('portfolioGrid');
 
 if (filterRow && portfolioGrid) {
-  const cards = portfolioGrid.querySelectorAll('.work-card, .portfolio-item');
+  const cards = portfolioGrid.querySelectorAll('.work-card-wrapper, .work-card, .portfolio-item');
 
   filterRow.addEventListener('click', (e) => {
     const btn = e.target.closest('.filter-btn');

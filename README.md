@@ -92,11 +92,12 @@ Visit `http://localhost:8000` in your web browser.
 
 ---
 
-## 💻 Tech Stack
+## 💻 Tech Stack & Responsive Framework
 
 - **Backend**: PHP 8.3 (Native Templating)
-- **Frontend**: HTML5, Vanilla JavaScript (ES6)
-- **Styling**: Modern CSS3 (Variables, Flexbox, CSS Grid, Media Queries)
+- **CSS Framework**: **Bootstrap 5.3** (Fluid Container Architecture & Responsive Grid System)
+- **Custom Styling**: Modern CSS3 Tokens (`styles.css`), HSL Color Palette & Glassmorphism
+- **Frontend Logic**: Vanilla JavaScript (ES6) + Bootstrap JS Bundle
 - **Typography**: Plus Jakarta Sans (Google Fonts)
 
 ---

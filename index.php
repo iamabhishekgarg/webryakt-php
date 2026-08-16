@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/config/data.php';
 
-$pageTitle = $siteConfig['title'];
+$pageTitle = 'Webryakt. — Web Design & Digital Marketing Agency';
 $currentPage = 'home';
 
 include __DIR__ . '/includes/header.php';
@@ -10,26 +10,26 @@ include __DIR__ . '/includes/header.php';
 <main>
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <span class="hero-left-label">WEB DESIGN &amp; DIGITAL MARKETING AGENCY</span>
-          <h1>Corporate<br>Creativity<span>.</span><br>Intelligent<br>Growth<span>.</span></h1>
-          <p class="hero-description"><?= htmlspecialchars($siteConfig['description']) ?></p>
+    <div class="container-fluid wrap">
+      <div class="hero-grid row align-items-start g-4 g-lg-5">
+        <div class="col-12 col-lg-7">
+          <span class="hero-left-label eyebrow">DESIGN &amp; MARKETING AGENCY</span>
+          <h1 class="hero-title">We craft digital experiences that grow <span>ambitious brands</span>.</h1>
+          <p class="hero-description">From first sketch to shipped product, we cover the full stack of building and growing a digital brand — design, marketing, identity and measurement.</p>
           <a href="work.php" class="hero-cta">
             VIEW OUR WORK
             <svg viewBox="0 0 24 12"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
           </a>
         </div>
-        <div class="hero-right">
-          <div class="coords"><?= htmlspecialchars($siteConfig['coords']['lat']) ?>,<br><?= htmlspecialchars($siteConfig['coords']['lng']) ?></div>
+
+        <div class="col-12 col-lg-5 hero-right">
+          <div class="coords">22.7196° N,<br>75.8577° E</div>
           <div class="hero-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Modern Architecture">
-            <!-- W. Overlay Card -->
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Modern Interior Space">
             <div class="hero-overlay-card">
               <div class="badge-w">W.</div>
-              <div class="card-divider"></div>
-              <p>Strategy-led design.<br>Performance-driven marketing.<br>Real impact.</p>
+              <hr class="card-divider">
+              <p>Minimal, strategy-led web design &amp; performance marketing built to convert.</p>
             </div>
           </div>
         </div>
@@ -38,38 +38,38 @@ include __DIR__ . '/includes/header.php';
   </section>
 
   <!-- Services Section -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-with-sidebar">
-        <div class="vertical-label-col">
-          <div class="vertical-label">WHAT WE DO</div>
-        </div>
-        <div class="section-content-col">
-          <div class="services-layout">
-            <div class="services-header">
-              <h2>Solutions that<br>move your<br>business <span>forward.</span></h2>
-              <div class="dot-pattern" aria-hidden="true">
-                <span></span><span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span><span></span>
-              </div>
+  <section class="services section-with-sidebar">
+    <div class="container-fluid wrap d-flex flex-column flex-md-row gap-4">
+      <div class="vertical-label-col">
+        <span class="vertical-label">WHAT WE DO</span>
+      </div>
+
+      <div class="section-content-col w-100">
+        <div class="services-layout row g-4 align-items-start">
+          <div class="services-header col-12 col-lg-3">
+            <h2>Services built to <span>move</span> the numbers.</h2>
+            <div class="dot-grid mt-4">
+              <svg viewBox="0 0 70 85"></svg>
             </div>
-            <div class="services-grid">
+          </div>
+
+          <div class="col-12 col-lg-9">
+            <div class="services-grid row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4">
               <?php foreach ($services as $service): ?>
-                <div class="service-card" id="<?= htmlspecialchars($service['slug']) ?>">
-                  <div>
+                <div class="col">
+                  <div class="service-card">
                     <div class="service-icon">
                       <?= $service['icon'] ?>
                     </div>
-                    <h3><?= htmlspecialchars($service['title']) ?></h3>
-                    <p><?= htmlspecialchars($service['desc']) ?></p>
+                    <div>
+                      <h3><?= htmlspecialchars($service['title']) ?></h3>
+                      <p><?= htmlspecialchars($service['short_desc']) ?></p>
+                    </div>
+                    <a href="services.php#<?= $service['slug'] ?>" class="service-link">
+                      EXPLORE
+                      <svg viewBox="0 0 14 10"><path d="M0 5h12M8 1l4 4-4 4"/></svg>
+                    </a>
                   </div>
-                  <a href="services.php#<?= htmlspecialchars($service['slug']) ?>" class="service-link">
-                    LEARN MORE
-                    <svg viewBox="0 0 24 12"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
-                  </a>
                 </div>
               <?php endforeach; ?>
             </div>
@@ -80,58 +80,59 @@ include __DIR__ . '/includes/header.php';
   </section>
 
   <!-- Portfolio Section -->
-  <section class="portfolio" id="work">
-    <div class="container">
-      <div class="section-with-sidebar">
-        <div class="vertical-label-col">
-          <div class="vertical-label">OUR WORK</div>
-        </div>
-        <div class="section-content-col">
-          <div class="portfolio-grid">
-            <?php 
-            $homeProjects = array_slice($projects, 0, 4);
-            foreach ($homeProjects as $project): 
-            ?>
-              <div class="portfolio-item">
+  <section class="portfolio section-with-sidebar">
+    <div class="container-fluid wrap d-flex flex-column flex-md-row gap-4">
+      <div class="vertical-label-col">
+        <span class="vertical-label">OUR WORK</span>
+      </div>
+
+      <div class="section-content-col w-100">
+        <div class="portfolio-grid row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-3">
+          <?php foreach ($projects as $project): ?>
+            <div class="col">
+              <a class="work-card" data-category="<?= htmlspecialchars($project['category_slug']) ?>" href="work.php">
                 <img src="<?= htmlspecialchars($project['image']) ?>" alt="<?= htmlspecialchars($project['alt']) ?>">
-                <div class="portfolio-overlay">
-                  <span class="portfolio-category"><?= htmlspecialchars(strtoupper($project['category'])) ?></span>
-                  <h3 class="portfolio-title"><?= htmlspecialchars($project['title']) ?></h3>
-                  <svg class="portfolio-arrow" viewBox="0 0 24 12"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+                <div class="work-card-overlay <?= htmlspecialchars($project['overlay']) ?>">
+                  <span class="work-tag"><?= htmlspecialchars(strtoupper($project['category'])) ?></span>
+                  <h3><?= htmlspecialchars($project['title']) ?></h3>
+                  <span class="arrow-circle">&#8594;</span>
                 </div>
-              </div>
-            <?php endforeach; ?>
-          </div>
-          <div class="portfolio-footer">
-            <a href="work.php" class="view-all-link">
-              VIEW ALL PROJECTS
-              <svg viewBox="0 0 24 12"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
-            </a>
-          </div>
+              </a>
+            </div>
+          <?php endforeach; ?>
+        </div>
+
+        <div class="portfolio-footer text-end mt-4">
+          <a href="work.php" class="view-all-link">
+            VIEW ALL PROJECTS
+            <svg viewBox="0 0 16 10"><path d="M0 5h14M9 1l5 4-5 4"/></svg>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Clients Section -->
-  <section class="clients">
-    <div class="container">
-      <div class="section-with-sidebar">
-        <div class="vertical-label-col">
-          <div class="vertical-label">TRUSTED BY</div>
-        </div>
-        <div class="section-content-col">
-          <div class="clients-grid">
-            <?php 
-            $count = count($brands);
-            foreach ($brands as $index => $brand): 
-            ?>
-              <div class="<?= htmlspecialchars($brand['class']) ?>"><?= $brand['html'] ?></div>
-              <?php if ($index < $count - 1): ?>
-                <div class="divider-v"></div>
+  <section class="clients trusted section-with-sidebar">
+    <div class="container-fluid wrap d-flex flex-column flex-md-row gap-4">
+      <div class="vertical-label-col">
+        <span class="vertical-label">TRUSTED BY</span>
+      </div>
+
+      <div class="section-content-col w-100">
+        <div class="clients-grid d-flex flex-wrap justify-content-between align-items-center gap-3">
+          <?php foreach ($clientLogos as $idx => $client): ?>
+            <div class="client-logo <?= htmlspecialchars($client['class']) ?>">
+              <?php if (!empty($client['subtext'])): ?>
+                <?= htmlspecialchars($client['name']) ?> <span><?= htmlspecialchars($client['subtext']) ?></span>
+              <?php else: ?>
+                <?= htmlspecialchars($client['name']) ?>
               <?php endif; ?>
-            <?php endforeach; ?>
-          </div>
+            </div>
+            <?php if ($idx < count($clientLogos) - 1): ?>
+              <div class="divider-v d-none d-md-block"></div>
+            <?php endif; ?>
+          <?php endforeach; ?>
         </div>
       </div>
     </div>
